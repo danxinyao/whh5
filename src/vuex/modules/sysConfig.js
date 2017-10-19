@@ -25,10 +25,10 @@ const mutations = {
         let icontype
         let isLoading
         if (options.type == 'success') {
-            icontype = 'icon-icon_zhengquetishi'
+            icontype = 'icon-weihaiicon_zhengquetishi'
             isLoading = false
         } else if (options.type == 'error') {
-            icontype = 'icon-icon_tishi'
+            icontype = 'icon-weihaiicon_shibaitishi'
             isLoading = false
         } else if (options.type == 'loading') {
             icontype = 'icon-loading'

@@ -66,8 +66,8 @@ const ajax = ({
     if (auth) {
         headers = {
             ...headersData,
-            Authorization: 'Bearer ' + cookie.get(cookie_token_name)
-            // Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyaWQiOiI0MjdlNTg0ZS01MTI2LTQ1MTEtYWU2My0wZTY5MzcyZDcyNzkiLCJ1c2VybmFtZSI6InF3ZXIiLCJzY29wZSI6IndlY2hhdCIsImxvZ2luIjoie1wiTWVyY2hhbnRJZFwiOlwiMDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMTAxXCIsXCJSb2xlVHlwZVwiOjAsXCJNZW1iZXJTaG9wSWRcIjpudWxsLFwiTG9naW5NZW1iZXJTaG9wSWRcIjpudWxsLFwiTWVtYmVyR3JvdXBJZFwiOm51bGwsXCJMb2dpblwiOlwiMTUwMTE3NjE3MjZcIixcIk5hbWVcIjpcInF3ZXJcIixcIlVzZXJJZFwiOlwiNDI3ZTU4NGUtNTEyNi00NTExLWFlNjMtMGU2OTM3MmQ3Mjc5XCJ9IiwiaXNzIjoibHhYeW1uIiwiYXVkIjoiQW55IiwiZXhwIjoxNTA2Njk5NzY3LCJuYmYiOjE1MDY2NzgxNjd9.OcQgtKOtWHzYe91O5cPbb_ae3agkm5ONAVo4LxxReXM'
+            //Authorization: 'Bearer ' + cookie.get(cookie_token_name)
+            Authorization: 'Bearer ' + store.getters.authToken
 
         }
     }

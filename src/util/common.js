@@ -11,6 +11,15 @@ Vue.prototype.util = {
     hostUrl: () => {
         return rootPath.substring(0, rootPath.length - 4)
     },
+    // 判断是否登录 if(this.util.isLogin())
+    isLogin: () => {
+        if (store.getters.authToken != '') {
+            return true
+        }
+        else {
+            return false
+        }
+    },    
     /**
      * [是否为微信浏览器]
      * @return {[type]} [description]

@@ -27,7 +27,7 @@
                 <router-link 
                     :class="[
                         isActive === 3 ? 'primary-color' : 'gray-color'
-                    ]" :to="{path: '/my'}">
+                    ]" :to="{path: '/user'}">
                     <pg-icon class="font_46" :name="isActive === 3 ? 'wode-dianji' : 'wode-weidianji'"></pg-icon>
                     <span class="title font_20">我的</span>
                 </router-link>
@@ -77,6 +77,6 @@
                     return 1
                 }
             }
-        }
+        }     
     }
 </script>

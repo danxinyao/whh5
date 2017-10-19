@@ -15,7 +15,8 @@
     "vuex": "^2.3.0",
     "vuex-router-sync": "^4.2.0",
     "weixin-js-sdk": "^1.0.7",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "vue-lazyload": "^1.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -69,7 +70,7 @@
     "port": "webpack-dev-server --progress --colors --inline --port 9090 ",
     "hot": "webpack-dev-server --progress --colors --inline --hot",
     "cp": "cp -r index.html ./build/ d:/wamp/www/vue",
-    "ip": "webpack-dev-server --progress --profile --colors --inline --host=192.168.88.132  --port 9090"
+    "ip": "webpack-dev-server --progress --profile --colors --inline --host=192.168.88.145  --port 9099"
   },
   "author": "Loonxi Guangzhou Team",
   "license": "ISC"

@@ -3,6 +3,10 @@
     <pg-aside>
         <!-- 内容区域 -->
         <pg-main bottom="98">
+            <pg-region
+                :state.sync="state"
+                :city.sync="city"
+                :district.sync="district"></pg-region>
         </pg-main>
         <!-- 底部工具栏 -->
         <pg-toolbar :isActive="1"></pg-toolbar>
