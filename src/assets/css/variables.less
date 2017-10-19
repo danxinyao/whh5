@@ -1,0 +1,41 @@
+
+@base: 750;
+@rate: @base/100*10rem; //px转rem的转化率
+@basePadding: 20/@rate; //页边距
+
+//px to  rem
+.pxToRem(@name,@px,@base:750) {
+    @{name}: @px/(@base/100*10) * 1rem;
+}
+
+//根据不同的屏幕制定不同的字体大小
+.px2px(@name, @px) {
+    @{name}: round(@px / 2) * 1px;
+    [data-dpr="2"] & {
+            @{name}: @px * 1px;
+    }
+    // for mx3
+    [data-dpr="2.5"] & {
+            @{name}: round(@px * 2.5 / 2) * 1px;
+    }
+    // for 小米note
+    [data-dpr="2.75"] & {
+            @{name}: round(@px * 2.75 / 2) * 1px;
+    }
+    [data-dpr="3"] & {
+            @{name}: round(@px / 2 * 3) * 1px
+    }
+    // for 三星note4
+    [data-dpr="4"] & {
+            @{name}: @px * 2px;
+    }
+}
+
+//多行文本截断
+.lineClamp(@line:1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @line;
+    -webkit-box-orient: vertical;
+}

@@ -1,0 +1,150 @@
+@import "./variables";
+
+/*
+ * #### 公共样式
+ */
+body {
+    text-align: center;
+}
+
+/*
+ * #### 最外层Div容器的设置
+ */
+#app {
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 50%;
+    margin-left: -750/2/@rate;
+    .pxToRem(width, 750);
+    height: 100%;
+    overflow: hidden;
+}
+
+/*
+ * #### 每个页面的内容部分最外层Div容器
+ * 1、只在views中的页面内容最外层
+ */
+.pg-main {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    transition: filter .5s;
+    &.bottom_0 {
+        bottom: 0;
+    }
+    &.bottom_98 {
+        bottom: 96/@rate;
+    }
+    &.bottom_80 {
+        bottom: 100/@rate;
+    }
+}
+
+.filter {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+}
+.none_filter {
+    filter: blur(0)
+}
+
+.font_110 {
+    .px2px(font-size, 110)
+}
+.font_60 {
+    .px2px(font-size, 60)
+}
+.font_46 {
+    .px2px(font-size, 46)
+}
+.font_42 {
+    .px2px(font-size, 42)
+}
+.font_38 {
+    .px2px(font-size, 38)
+}
+.font_36 {
+    .px2px(font-size, 36)
+}
+.font_32 {
+    .px2px(font-size, 32)
+}
+.font_30 {
+    .px2px(font-size, 30)
+}
+.font_28 {
+    .px2px(font-size, 28)
+}
+.font_26 {
+    .px2px(font-size, 26)
+}
+.font_24 {
+    .px2px(font-size, 24)
+}
+.font_22 {
+    .px2px(font-size, 22)
+}
+.font_20 {
+    .px2px(font-size, 20)
+}
+
+/*
+ * #### 清除浮动
+ */
+.clearfix {
+    &:after {
+        clear: both;
+        content: '.';
+        display: block;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+/*
+ * #### 横向等比分割
+ */
+.flex-ul {
+    position: relative;
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+}
+
+.flex-ul li {
+    cursor: pointer;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1; 
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
