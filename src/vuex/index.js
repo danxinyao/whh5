@@ -9,11 +9,15 @@ promisePolyfill.polyfill()
 Vue.use(Vuex)
 
 import sysConfig from './modules/sysConfig' //系统配置
+import basic from './modules/basic'
+import auth from './modules/auth'
 
 export default new Vuex.Store({
 	actions,
 	getters,
 	modules: {
-    	sysConfig
+    	sysConfig,
+        basic,
+        auth,
 	}
 })

@@ -18,6 +18,12 @@ import toolbar from './toolbar/toolbar.vue'
 import button from './button/button.vue'
 // 多选框
 import checkbox from './checkbox/checkbox.vue'
+//省市区
+import region from './region/region.vue'
+// 手势图片
+import gestureImg from './gestureImg/gestureImg.vue'
+// 导航
+import navigation from './navigation/navigation.vue'
 
 const install = Vue => {
 	Vue.component(hud.name, hud) // 系统提示信息
@@ -30,6 +36,9 @@ const install = Vue => {
     Vue.component(toolbar.name, toolbar) // 底部导航
     Vue.component(button.name, button) //按钮
     Vue.component(checkbox.name, checkbox) //多选框
+    Vue.component(region.name, region) //省市区
+    Vue.component(gestureImg.name, gestureImg) // 手势图片
+    Vue.component(navigation.name, navigation) // 手势图片
 }
 
 export default install

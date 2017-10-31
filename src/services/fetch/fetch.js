@@ -3,8 +3,6 @@ import 'whatwg-fetch'
 import { rootPath, errHandler } from './config'
 import store from '../../vuex'
 import actions from '../../vuex/actions'
-import cookie from 'js-cookie'
-import { cookie_token_name, removeAuthToken } from 'util/auth'
 
 /**
  * 检查ajax返回的状态码,如果为401,则跳转到登录页
@@ -23,7 +21,6 @@ const checkStatus = function(response) {
     else {
         // 如果没有登录,则跳转到登录页面
         if (response.status === 401) {
-            removeAuthToken()
             window.location = '/auth'
         }
         const error = new Error(response.statusText);
@@ -66,8 +63,7 @@ const ajax = ({
     if (auth) {
         headers = {
             ...headersData,
-            Authorization: 'Bearer ' + cookie.get(cookie_token_name)
-            // Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyaWQiOiI0MjdlNTg0ZS01MTI2LTQ1MTEtYWU2My0wZTY5MzcyZDcyNzkiLCJ1c2VybmFtZSI6InF3ZXIiLCJzY29wZSI6IndlY2hhdCIsImxvZ2luIjoie1wiTWVyY2hhbnRJZFwiOlwiMDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDAwMDAwMTAxXCIsXCJSb2xlVHlwZVwiOjAsXCJNZW1iZXJTaG9wSWRcIjpudWxsLFwiTG9naW5NZW1iZXJTaG9wSWRcIjpudWxsLFwiTWVtYmVyR3JvdXBJZFwiOm51bGwsXCJMb2dpblwiOlwiMTUwMTE3NjE3MjZcIixcIk5hbWVcIjpcInF3ZXJcIixcIlVzZXJJZFwiOlwiNDI3ZTU4NGUtNTEyNi00NTExLWFlNjMtMGU2OTM3MmQ3Mjc5XCJ9IiwiaXNzIjoibHhYeW1uIiwiYXVkIjoiQW55IiwiZXhwIjoxNTA2Njk5NzY3LCJuYmYiOjE1MDY2NzgxNjd9.OcQgtKOtWHzYe91O5cPbb_ae3agkm5ONAVo4LxxReXM'
+            Authorization: 'Bearer ' + store.getters.authToken
 
         }
     }
@@ -118,7 +114,6 @@ const ajax = ({
                 else {
                     // 处理后端抛出错误
                     if (result.message == '登录超时') {
-                        removeAuthToken()
                         window.location = '/auth'
                     }
 

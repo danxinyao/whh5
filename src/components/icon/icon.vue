@@ -1,6 +1,6 @@
 <template>
     <i 
-        class="iconfont" 
+        class="iconfont"
         :class="[
             name ? 'icon-weihaiicon_' + name : '',
             place + '-icon'
